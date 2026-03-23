@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Input validation API</h1>
+    <input
+      id="input"
+      type="text"
+      oninput="checkValid()"
+      placeholder="Type something..."
+      minlength="20"
+      maxlength="100"
+    /><br /><br />
+    <div class="display">message...</div>
+    
+    <script>
+      const display = document.querySelector(".display");
+      function checkValid() {
+        const input = document.getElementById("input");
+        if (!input.checkValidity()) {
+          display.innerHTML = "Input is not valid :" + input.validationMessage;
+        } else display.innerHTML = "Input is valid!";
+      }
+    </script>
+  </body>
+</html>

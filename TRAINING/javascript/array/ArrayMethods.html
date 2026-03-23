@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="result"></div>
+
+    <script>
+      let name = [1, "raman", "deepak", "gurdeep"];
+      let name2 = ["aman", "deepak", "gurdeep"];
+      let name3 = ["aman", "deepak", "gurdeep"];
+      let name4 = ["aman", "deepak", "gurdeep"];
+      let arrAge = [10, 20, 30, 40];
+      let str = name[0].toString();
+      let length = name.length;
+      let at = name.at(2);
+      let joinedArray = name.join("-");
+      let popedElement = name.pop();
+      let pushedArrayLength = name2.push("sahil");
+      let shift = name3.shift();
+      let unShift = name4.unshift("deepak");
+      let IndexOf = name4.indexOf("deepak");
+      let lastIndexOf = name4.lastIndexOf("deepak");
+      let includes = name4.includes("aman");
+      let findName = name4.find((name) => name == "deepak");
+      let FindIndex = name4.findIndex((name) => name == "deepak");
+      let LastIndex = name4.findLast((name) => name == "deepak");
+      let FindLastIndex = name4.findLastIndex((name) => name == "deepak");
+      let findAge = arrAge.find((adult) => adult > 18);
+      let sortedArray = name4.toSorted();
+      let reversedArray = name4.toReversed();
+      let concat = name2.concat(name3);
+      let everyElement = arrAge.every((adult) => adult > 18);
+      let someElement = arrAge.some((minor) => minor < 18);
+      let word = "HELLO WORLD!";
+      let letters = Array.from(word);
+      let spreadOpt = [...name2, ...name3];
+      let arrArgumentCollection = [1, 2, 3, 4, 5];
+      let [first, second, ...arrArgument] = arrArgumentCollection;
+      function restFunction(...rest) {
+        return rest;
+      }
+      let copyElement = name2.copyWithin(3, 0);
+      let multiDimensionArray = [
+        [
+          [1, 2],
+          [3, 4],
+          [1, 2],
+          [3, 4],
+        ],
+        [
+          [1, 2],
+          [3, 4],
+          [1, 2],
+          [3, 4],
+        ],
+      ];
+      let flatArray = multiDimensionArray.flat();
+      let sinleArray=[1,2,3,4,5,6,7,8,9,10]
+      let flatMapArray=sinleArray.flatMap(x=>[x,"$"])
+      let spliceArray=name3.splice(1,2,"sunil","vansh")
+      let mathSortArray=[10,23,12,23,43,45,65]
+      let mathSorting=mathSortArray.sort((a,b)=>{return a-b})
+      let forEachFunction=sinleArray.forEach((value,i,array)=>{
+        array[i]=value*3
+      })
+      let mapFunction=mathSortArray.map((value)=>value*10)
+      let filterFunction=mathSortArray.filter((x)=>x>30)
+
+
+
+
+      const result = document.querySelector(".result");
+      result.innerHTML = `
+        toString : ${typeof str}<br><br>
+        length : ${length}<br><br>
+        at : ${at}<br><br>
+        Join : ${joinedArray}<br><br>
+        PopedElement : ${popedElement}<br><br>
+        PopedArray : ${name}<br><br>
+        PushedArrayLength : ${pushedArrayLength}<br><br>
+        PushedArray : ${name2}<br><br>
+        ShiftElement : ${shift}<br><br>
+        ShiftArray : ${name3}<br><br>
+        unShiftElement : ${unShift}<br><br>
+        unShiftArray : ${name4}<br><br>
+        IndexOf(first position of element "deepak") : ${IndexOf}<br><br>
+        lastIndexOf(last position of element "deepak") : ${lastIndexOf}<br><br>
+        If Include : ${includes}<br><br>
+        Age Array : ${arrAge}<br><br>
+        Find(return first deepak from array if exist) : ${findName}<br><br>
+        Find(return first index of deepak from array if exist) : ${FindIndex}<br><br>
+        Find(return last deepak from array if exist) : ${LastIndex}<br><br>
+         Find(return last index of deepak from array if exist) : ${FindLastIndex}<br><br>
+        find(number > 18) : ${findAge}<br><br> 
+        sorted orignal array : ${name.sort()}<br><br>
+        sorted and stored in new array : ${sortedArray}<br><br>
+        orignal array : ${name}<br><br>
+        Reversed orignal array : ${name.reverse()}<br><br>
+        Reversed and stored in new array : ${reversedArray}<br><br>
+        array1 : ${name2}<br><br>
+        array2 : ${name3}<br><br>
+        concatination : ${concat}<br><br>
+        age array : ${arrAge}<br><br>
+        check if everyone is adult(using "every" return T/F) : ${everyElement}<br><br>
+        check if anyone is not adult(using "some" return T/F) : ${someElement}<br><br>
+        Orignal string : ${word}<br><br>
+        String converted into letter array (using "Array.from()") : ${letters}<br><br>
+        Array1 : ${name2}<br><br>
+        Array2 : ${name3}<br><br>
+        Merge array using spread "..." operator : ${spreadOpt}<br><br>
+        collecting the remaining elements in the array using rest "..." operation : ${arrArgument}<br><br>
+        collecting the arguments in the array using rest "..." operation : ${restFunction(1, 2, 3, 4, 5)}<br><br>
+        Is the resetFuncion arguments array : ${Array.isArray(restFunction(1, 2, 3, 4, 5))}<br><br>
+        copy element within the array : ${copyElement}<br><br>
+        Orignal multidimensional array : ${multiDimensionArray}<br><br>
+        Flat array using "flat" : ${flatArray}<br><br>
+        Orignal single array : ${sinleArray}<br><br>
+        Add alternatiove element in array using "flatMap" : ${flatMapArray}<br><br>
+        Orignal array : ["deepak", "gurdeep"]<br><br>
+        spliced element (removing elements and adding new ) : ${spliceArray}<br><br>
+        spliced array : ${name3}<br><br>
+        Slice operation : ${name3.slice(1,3)}<br><br>
+        Orignal array : [10,23,12,23,43,45,65]<br><br>
+        math sorting accending order : ${mathSorting}<br><br>
+        math sorting in random order : ${mathSorting.sort(()=>{return Math.random()-0.5})}<br><br>
+        finding minimun value in the array : ${Math.min(...mathSortArray)}<br><br>
+        finding maximum value in the array : ${Math.max(...mathSortArray)}<br><br>
+        Table of 3 using forEach : ${sinleArray}<br><br>
+        Orignal array : ${mathSortArray}<br><br>
+        Map function(multipling array whith 10) :${mapFunction}<br><br> 
+        Orignal array : ${mathSortArray}<br><br>
+        Filter function (value >30) : ${filterFunction}<br><br>
+        `;
+    </script>
+  </body>
+</html>

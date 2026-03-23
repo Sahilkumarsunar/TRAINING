@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Processing</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.output {
+  margin-top: 20px;
+}
+.item {
+  padding: 8px;
+  margin: 5px 0;
+  background: #334155;
+  border-radius: 6px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Student Records</h1>
+  <button onclick="processAllStudents()">Process</button>
+  <div class="output" id="output"></div>
+</div>
+
+<script>
+const students = {
+  student1: { name: "Alice", marks: { math: 85, science: 90, english: 78 } },
+  student2: { name: "Bob", marks: { math: 75, science: 80, english: 88 } },
+  student3: { name: "Charlie", marks: { math: 95, science: 89, english: 92 } }
+};
+
+function processStudent(student) {
+  return new Promise((resolve) => {
+    const delay = Math.random() * 1000;
+    setTimeout(() => {
+      const marks = Object.values(student.marks);
+      const avg = marks.reduce((a, b) => a + b, 0) / marks.length;
+      resolve({ name: student.name, average: avg.toFixed(2) });
+    }, delay);
+  });
+}
+
+async function processAllStudents() {
+  const output = document.getElementById("output");
+  output.innerHTML = "";
+  const results = [];
+
+  for (let key in students) {
+    const result = await processStudent(students[key]);
+    results.push(result);
+  }
+
+  for (let student of results) {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.textContent = student.name + " has an average of " + student.average;
+    output.appendChild(div);
+  }
+}
+</script>
+
+</body>
+</html>

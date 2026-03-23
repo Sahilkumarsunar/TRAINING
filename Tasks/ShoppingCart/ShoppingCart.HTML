@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="ShoppingCart.css" />
+    <script defer src="ShoppingCart.js"></script>
+  </head>
+  <body>
+    <div class="nev-bar">
+      <div class="site-name">
+        <h2>Shopping Cart</h2>
+      </div>
+
+      <div class="search-section">
+        <input type="text" class="search-bar" id="search" placeholder="search....." />
+        <div class="searchedItems"></div>
+      </div>
+      
+      <div class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="cart-icon">
+        <i class="fa-solid fa-cart-arrow-down">
+          <p id="counter"></p>
+        </i>
+
+        <div id="cart-section"> <p class="cartText" style="display: flex; justify-content: center;">No cart items</p>
+       </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div id="product-section"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memory Maze Game</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#111;
+color:white;
+}
+
+#game{
+width:500px;
+height:500px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(10,1fr);
+grid-template-rows:repeat(10,1fr);
+border:3px solid white;
+}
+
+.tile{
+border:1px solid #333;
+}
+
+.player{
+background:blue;
+}
+
+.wall{
+background:black;
+}
+
+.goal{
+background:green;
+}
+
+.enemy{
+background:red;
+}
+
+.dark{
+filter:brightness(0.15);
+}
+
+</style>
+</head>
+
+<body>
+<div class="main">
+    <video autoplay muted loop class="bg-video" >
+            <source src="backgroundVdo.mp4">
+        </video>
+
+<h2>Memory Maze Game</h2>
+<p>Memorize when bright. Move when dark.</p>
+
+<div id="game"></div>
+</div>
+<script>
+
+const game=document.getElementById("game")
+
+let canMove=false
+
+let player={
+x:0,
+y:0
+}
+
+let enemies=[
+{x:6,y:6},
+{x:3,y:7}
+]
+
+let map=[
+
+[0,0,0,1,0,0,0,0,0,0],
+[0,1,0,1,0,1,1,1,0,0],
+[0,1,0,0,0,0,0,1,0,0],
+[0,1,1,1,1,1,0,1,0,0],
+[0,0,0,0,0,1,0,0,0,0],
+[1,1,1,1,0,1,1,1,1,0],
+[0,0,0,1,0,0,0,0,1,0],
+[0,1,0,1,1,1,1,0,1,0],
+[0,1,0,0,0,0,1,0,0,0],
+[0,0,0,1,1,0,0,0,1,2]
+
+]
+
+function drawMap(){
+
+game.innerHTML=""
+
+map.forEach((row,y)=>{
+
+row.forEach((cell,x)=>{
+
+let tile=document.createElement("div")
+tile.classList.add("tile")
+
+if(cell===1) tile.classList.add("wall")
+if(cell===2) tile.classList.add("goal")
+
+if(player.x===x && player.y===y){
+tile.classList.add("player")
+}
+
+if(enemies.some(e=>e.x===x && e.y===y)){
+tile.classList.add("enemy")
+}
+
+game.appendChild(tile)
+
+})
+
+})
+
+}
+
+document.addEventListener("keydown",(e)=>{
+
+if(!canMove) return
+
+let newX=player.x
+let newY=player.y
+
+if(e.key==="ArrowUp") newY--
+if(e.key==="ArrowDown") newY++ 
+if(e.key==="ArrowLeft") newX--
+if(e.key==="ArrowRight") newX++
+
+if(map[newY] && map[newY][newX]!==1){
+
+player.x=newX
+player.y=newY
+
+}
+
+checkGoal()
+checkEnemy()
+
+drawMap()
+
+})
+
+function checkGoal(){
+
+if(map[player.y][player.x]===2){
+
+alert("YOU WIN!")
+location.reload()
+
+}
+
+}
+
+function checkEnemy(){
+
+enemies.forEach(e=>{
+
+if(e.x===player.x && e.y===player.y){
+
+alert("GAME OVER")
+location.reload()
+
+}
+
+})
+
+}
+
+function moveEnemies(){
+
+enemies.forEach(e=>{
+
+let dir=Math.floor(Math.random()*4)
+
+let newX=e.x
+let newY=e.y
+
+if(dir===0) newX++
+if(dir===1) newX--
+if(dir===2) newY++
+if(dir===3) newY--
+
+if(map[newY] && map[newY][newX]!==1){
+
+e.x=newX
+e.y=newY
+
+}
+
+})
+
+}
+
+function cycle(){
+
+game.classList.remove("dark")
+canMove=false
+
+setTimeout(()=>{
+
+game.classList.add("dark")
+canMove=true
+
+},1000)
+
+}
+
+setInterval(cycle,4000)
+
+setInterval(()=>{
+
+moveEnemies()
+checkEnemy()
+drawMap()
+
+},1000)
+
+drawMap()
+
+</script>
+
+</body>
+</html>

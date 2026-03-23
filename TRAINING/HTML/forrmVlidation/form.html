@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validForm(){
+            let name=document.getElementById("name").value
+            if(name===""){
+                alert("form can't be empty")
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validForm()">
+        <label >Name :</label>
+        <input type="text" placeholder="enter name" id="name">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

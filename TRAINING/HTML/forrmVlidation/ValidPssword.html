@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function ValidPass(){
+        const password = document.getElementById("password").value
+    if(password.length<6){
+        alert("password can't be less than 6 letters")
+        return false;
+    }
+    else{return true;}
+    }
+</script>
+</head>
+<body>
+    <form onsubmit="return ValidPass()">
+        <label >Password</label>
+        <input type="password"  id="password"/>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

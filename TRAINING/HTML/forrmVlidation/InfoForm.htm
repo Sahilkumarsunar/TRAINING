@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function validForm() {
+        let name = document.getElementById("name").value;
+         let password= document.getElementById("password").value;
+          let number= document.getElementById("number").value;
+           let email= document.getElementById("email").value;
+        if (name === "") {
+          alert("form can't be empty");
+          return false;
+        } 
+        if (number.length < 10) {
+          alert("Number can't be less than 10 ");
+          return false;}
+        if (
+          email === "" ||
+          !email.includes("@") ||
+          !email.includes(".com")
+        ) {
+          alert("please enter valid email");
+          return false;
+        }  if (password.length < 6) {
+          alert("password can't be less than 6 letters");
+          return false;
+        } 
+          else{
+            alert("form submitted")
+          return true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return validForm();">
+      <label>Name :</label>
+      <input type="text" placeholder="enter name" id="name" /><br /><br />
+      <label>Phone no.</label>
+      <input
+        type="number"
+        placeholder="enter mobile no."
+        id="number"
+      /><br /><br />
+      <label>Email</label>
+      <input type="email" placeholder="enter email" id="email" /><br /><br />
+
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="enter password"
+        id="password"
+      /><br /><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

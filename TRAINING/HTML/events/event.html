@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="alert('page loaded!')">
+    <h1>combined js DOM event</h1>
+    <div class="box">
+        <h3>1. onchange</h3>
+        <input type="text" onchange="alert('input changed!')" placeholder="type and blur">
+    </div>
+    
+<div class="box">
+    <h3>2. onclick</h3>
+    <button onclick="alert('button clicked')">click me!</button>
+</div>
+<div class="box">
+    <h3>3. onclick </h3>
+    <button onclick="alert('double clicked')">doubl click</button>
+</div>
+<div class="box">
+    <h3>7. onchange with e.target.value</h3>
+    <input type="text" onchange="handleChange(event)" placeholder="Type and leave">
+    <p id="output">Changed value will appear here.</p>
+  </div>
+</body>
+</html>

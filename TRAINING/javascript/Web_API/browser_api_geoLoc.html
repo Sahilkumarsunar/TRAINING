@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Geo Position Browser API</h1>
+    <div class="display">Find your location</div>
+    <br /><br />
+    <button id="locBtn" onclick="getLocation()">find location.</button>
+
+    <script>
+      let input = "sahil";
+      const display = document.querySelector(".display");
+      function getLocation() {
+        if (navigator.geolocation) {
+          display.innerHTML = "Getting your location...";
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else
+          display.innerHTML = "GeoLocation is not supported by the browser";
+      }
+      function showPosition(Position) {
+        display.innerHTML =
+          "Latitude :" +
+          Position.coords.latitude +
+          " + Longitude : " +
+          Position.coords.longitude;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script defer src="book.js"></script>
+    <link rel="stylesheet" href="book.css" />
+  </head>
+  <body>
+    <Navbar style="background-color: #1e2a38; height: 100px; width: auto">
+      <div class="navbar">
+        <h2>BMS</h2>
+        <span id="edit-icon">
+        </span>
+      </div>
+    </Navbar>
+    <div class="edit">
+      <center>
+
+      <label>ADD BOOK : </label>
+      <input type="text" id="newBook" placeholder="Enter book name" />
+      <button id="addBook">Add</button><br /><br />
+      <button id="first">Remove first book</button>
+      <button id="last">Remove last book</button><br /><br />
+      <label>DELETE BOOK : </label>
+      <input type="text" id="bookIndex" placeholder="Enter index of book" />
+      <button id="dltBtn">Dlt</button><br><br>
+      <label>UPDATE BOOK : </label>
+      <input type="text" id="updateBookIndex" placeholder="Enter index of book"/>
+      <input type="text" id="updatedBook" placeholder="Enter new book name"/>
+      <button id="updateBtn">Update</button><br><br>
+      <label>COPY BOOK : </label>
+      <input type="text" id="copyFrom" placeholder="From" />
+      <input type="text" id="copyTo" placeholder="To" />
+      <button id="copyBtn">copy</button><br><br>
+      </center>
+    </div>
+    <div class="display">
+      <h2>-Most selling-</h2>
+    </div>
+    <div class="display-section"></div>
+    <div class="all-books">
+      
+    </div>
+    <div class="all-books-section"></div>
+  </body>
+</html>

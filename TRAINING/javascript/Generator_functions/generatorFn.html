@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Generator function <br>
+    <button id="genBtn">Click to make juice</button><br><br>
+    <div class="display"></div>
+    <script>
+      function hello() {
+       document.querySelector(".display").innerHTML="Hello your juice is preparing..."
+      }
+      function cutFruits() {
+        document.querySelector(".display").innerHTML="Cutting the fruits..."
+      }
+      function extractJuice() {
+        document.querySelector(".display").innerHTML="Extracting the juice of the fruite..."
+      }
+      function addSpices() {
+       document.querySelector(".display").innerHTML="Adding the spices and mixing..."
+      }
+      function* myGenerator() {
+        yield hello();
+        yield cutFruits();
+        yield extractJuice();
+        yield addSpices();
+        return document.querySelector(".display").innerHTML="Your juice is ready!"
+      }
+
+     const gen= myGenerator()
+     const genBtn=document.querySelector("#genBtn")
+     genBtn.addEventListener("click",()=>{
+      gen.next()
+     })
+
+    </script>
+  </body>
+</html>

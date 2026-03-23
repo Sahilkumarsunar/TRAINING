@@ -1,0 +1,128 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: #d3d3d365;
+}
+.navbar {
+  background-color: #ffb347;
+  height: 70px;
+  width: auto;
+  color: #faf3e0;
+  display: flex;
+  align-items: center;
+  padding: 0px 60px 0px 60px;
+  font-size: x-large;
+}
+#edit-icon {
+  margin-left: auto;
+}
+#edit-icon {
+  transition: all 0.2s ease;
+}
+#edit-icon:hover {
+  cursor: pointer;
+}
+#edit-icon:active {
+  color: #b35400;
+  transform: scale(0.8);
+}
+.display,
+.all-books {
+  display: flex;
+  justify-content: center;
+  color: #ffb347;
+  margin: 20px;
+}
+.display-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+.all-books-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.displayCard {
+  transition: all 0.5s ease;
+  border-radius: 20px;
+  background-color: #ffb347;
+  border-radius: 10px;
+}
+.displayCard:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.displayCardImg {
+  height: 280px;
+  width: 280px;
+  border-radius: 10px 10px 0px 0px;
+}
+.displayCardInfo {
+  width: 280px;
+  height: 50px;
+  justify-items: center;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+}
+input {
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #faf3e0;
+  background-color: #fffaf0;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff9f1c;
+  box-shadow: 0 0 8px rgba(255, 179, 71, 0.6);
+}
+button {
+  padding: 8px 14px;
+  margin: 5px 5px 5px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #faf3e0;
+  color: #b35400;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff9f1c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+.edit {
+  display: none;
+}
+.edit.active {
+  display: block;
+  height: auto;
+  width: 29em;
+  right: 0;
+  position: absolute;
+  background-color: #ffb347;
+  margin: 5px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+input::placeholder {
+  color: grey;
+  opacity: 50%;
+}
