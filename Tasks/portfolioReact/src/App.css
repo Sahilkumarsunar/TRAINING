@@ -1,0 +1,187 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-image: url("assets/hero-background.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .nev ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 14px;
+        padding: 15px 30px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(232, 115, 115);
+        font-size: 20px;
+        transition: 0.4s;
+      }
+
+      a:hover {
+        color: white;
+        font-size: 24px;
+      }
+
+      .hero-section {
+        height: 750px;
+      }
+
+      .profile-image {
+        background-image: url("assets/profile.jpg");
+        background-size: cover;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        height: 200px;
+        width: 200px;
+        float: left;
+        margin-top: 280px;
+        margin-left: 200px;
+        border-radius: 50%;
+      }
+
+      .hero-content {
+        float: left;
+        margin: 300px 100px 0 200px;
+        color: white;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h1 span {
+        color: #ff6b6b;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .titlle-wrap {
+        text-align: center;
+        margin-bottom: 100px;
+      }
+
+      .section-titlle {
+        padding: 14px 30px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        color: rgb(232, 115, 115);
+        font-size: 30px;
+        display: block;
+        margin-top: 100px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        width: 900px;
+        margin: auto;
+      }
+
+      .project-card,
+      .skill-card,
+      .education-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 30px;
+        color: white;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .project-card:hover,
+      .skill-card:hover,
+      .education-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      .project-img1,
+      .project-img2,
+      .project-img3 {
+        height: 400px;
+        border-radius: 14px;
+        background-size: cover;
+        opacity: 0.7;
+      }
+
+      .project-img1 {
+        background-image: url("assets/KESHVIKA.jpg");
+      }
+      .project-img2 {
+        background-image: url("assets/Face-recognition.jpg");
+      }
+      .project-img3 {
+        background-image: url("assets/ELITE-HOME.jpg");
+      }
+
+      h3 {
+        text-align: center;
+        color: rgb(232, 115, 115);
+        margin-top: 20px;
+      }
+
+      p {
+        font-size: 22px;
+        color: rgb(232, 115, 115);
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .skills-container {
+        width: 900px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .skill-card ul {
+        list-style: none;
+        margin-top: 15px;
+      }
+
+      .skill-card li {
+        font-size: 18px;
+        padding: 6px 0;
+      }
+
+      .education-container {
+        width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .education-card span {
+        opacity: 0.7;
+        font-size: 16px;
+      }
+
+      .education-card p {
+        text-align: left;
+        font-size: 18px;
+      }

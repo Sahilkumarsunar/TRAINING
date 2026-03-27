@@ -1,11 +1,11 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import Home from "./Components/Home.jsx"
-import Lifecycle from "./Components/Lifecycle.jsx"
 const App = () => {
+  const [name,setName]=useState("USER")
   return (
     <div>
-      <Home/>
-      <Lifecycle/>
+       
+      <Home name= {name}  setName={setName} />
     </div>
   )
 }

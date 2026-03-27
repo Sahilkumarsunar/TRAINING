@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Home = () => {
+const Home = ({name,setName}) => {
   return (
     <div>
-      <h1>this is home</h1>
+      <input type="text" onChange={(e)=>{setName(e.target.value)}} placeholder='Enter your name' />
+      <h1>{name},Welcome to the site</h1>
     </div>
   )
 }
