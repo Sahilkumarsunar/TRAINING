@@ -14,7 +14,7 @@ const Experience = () => {
           <div className="experience-header">
             <img src={alphaLogo} alt="Alpha IT Managed Services" className="company-logo" />
             <div>
-              <h3>Full Stack Developer Intern</h3>
+              <h3>Full Stack Developer Training</h3>
               <span>Alpha IT Managed Services Pvt. Ltd. | Jan 2026 – Present</span>
             </div>
           </div>
